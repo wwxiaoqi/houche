@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- grid 格纸：实色面板卡、方形按钮、紧凑密度、小字阶。 -->
+<resources>
+    <string name="kit_type_scale">0.96</string>
+    <dimen name="kit_radius_card">16dp</dimen>
+    <string name="kit_divider">solid</string>
+    <string name="kit_button">rect</string>
+    <string name="kit_card">fill</string>
+    <string name="kit_density">compact</string>
+    <string name="kit_font">sans</string>
+</resources>

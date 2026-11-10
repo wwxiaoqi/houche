@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 实心品牌蓝（方案 6）。不用渐变：自适应图标被裁成圆形时渐变方向会显得脏 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#3B82F6" />
+</shape>

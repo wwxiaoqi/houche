@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- grid 格纸（浅色）：冷灰底 + 实色面板；cardStroke 故意等于 card，模拟"描边=底色"。 -->
+<resources>
+    <color name="bg">#FAFAFA</color>
+    <color name="card">#F4F4F5</color>
+    <color name="cardStroke">#F4F4F5</color>
+    <color name="sep">#E4E4E7</color>
+    <color name="track">#E4E4E7</color>
+    <color name="text">#18181B</color>
+    <color name="text2">#52525B</color>
+    <color name="text3">#A1A1AA</color>
+    <color name="accent">#5A6DFE</color>
+    <color name="accentFill">#27272A</color>
+    <color name="onAccent">#FFFFFF</color>
+    <color name="ok">#2E8B57</color>
+    <color name="okText">#1B7F3B</color>
+    <color name="warn">#B4762A</color>
+    <color name="warnText">#8F5A16</color>
+    <color name="danger">#C0392B</color>
+    <color name="dangerText">#A33025</color>
+</resources>

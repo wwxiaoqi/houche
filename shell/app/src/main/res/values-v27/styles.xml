@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 只加一条，其余继承 Base（直接重写 AppTheme 会把 values/ 里那份整份顶掉） -->
+    <style name="AppTheme" parent="AppTheme.Base">
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

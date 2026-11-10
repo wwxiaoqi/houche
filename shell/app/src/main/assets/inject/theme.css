@@ -1,0 +1,73 @@
+/* 结构性覆盖（v6）—— 只做一件事：把网页自己的「外壳」藏掉，因为原生层已经有一份。
+ *
+ * 用户明确要求：**不要动网页的配色**。所以这里没有任何 backgroundColor / color /
+ * border-radius / font / filter 规则；网页长什么样就是什么样。
+ * 需要配色一致的部分由原生层反过来适配网页（Bridge.accent）。
+ */
+
+/* 1. 列表页的顶栏（品牌色那一条）与它自己的 tab */
+.page-list .list-title,
+.page-list .div-flex,
+.tabnav-container,
+.tab-list {
+  display: none !important;
+}
+
+/* 2. 页面级标题条（例如路线规划那条「‹ 路线规划」），避免和原生顶栏叠成两层 */
+.header,
+.page-header {
+  display: none !important;
+}
+
+/* 3. 只留一点呼吸：内容顶部不要贴着原生 tabbar */
+.page-list,
+.page-around {
+  padding-top: 6px !important;
+}
+
+/* ============ v11（按用户逐条指定） ============ */
+
+/* ③ 搜索条不再用 CSS 全局隐藏（会把「位置搜索页」的输入框一起干掉，导致路线规划无法输入）。
+ *   改成按路由由 inject.js 的 __GJ_HIDE_SEARCHBAR() 控制：只有 linesearch 才藏。 */
+
+/* ④ 「最近使用」空态里的「去搜索」按钮删掉 */
+html body.gj-theme .page-recent .no-recent-result .btn,
+html body.gj-theme .page-recent .no-recent-result a { display: none !important; }
+
+/* ② 站详情页顶部的「输入目的站」条（文本匹配由 inject.js 处理，这里兜一下同类结构） */
+html body.gj-theme .station-detail .transfer-container,
+html body.gj-theme .page-station .transfer-container { display: none !important; }
+
+/* ============ v13 ============ */
+/* 网页的悬浮刷新按钮：位图一放大就糊，所以**整个隐藏**，改用原生矢量按钮（MainActivity 里画的） */
+html body.gj-theme .around-refresh { display: none !important; }
+
+/* 线路详情页底部那栏：保持网页原样（上一版加 flex 改造把它的按钮压重叠了，已撤销） */
+
+/* 线路详情页底部那条（换向 / 刷新）：
+ * 之前它被我的 flex 改造搞重叠过，这次只加**内边距 + 一条发丝线**，不动布局属性。
+ * 真正把它从屏幕最下沿顶起来的是原生侧给 contentHost 加的底部 inset。 */
+html body.gj-theme .detail__bottom {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  border-top: 1px solid #E6E2DA !important;
+}
+
+/* ============ 边到边：安全区交给页面自己 ============
+ * 原生把底部手势条高度写进 --gj-bottom（像素）。
+ *  · body 加 padding-bottom：列表最后一行不会被手势条压住
+ *  · 固定底栏（换向/刷新那条）加 padding-bottom：它的**白底铺到屏幕最底**，
+ *    按钮本身仍在手势条之上 —— 这样才没有"底栏下面还露一条灰"的接缝。
+ */
+html body.gj-theme {
+  padding-bottom: var(--gj-bottom, 0px) !important;
+  box-sizing: border-box;
+}
+html body.gj-theme .detail__bottom {
+  bottom: 0 !important;
+  /* 抬高：顶部 12 + 底部 20 + 手势条 → 按钮离开屏幕下沿，拇指够得到 */
+  padding-top: 12px !important;
+  padding-bottom: calc(20px + var(--gj-bottom, 0px)) !important;
+  box-sizing: border-box !important;
+  min-height: 64px !important;
+}

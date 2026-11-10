@@ -1,0 +1,23 @@
+# 编译产物
+/build/
+*.apk
+
+# 签名文件 / 本地密钥，绝不入库
+/keystore/
+*.jks
+*.keystore
+
+# 本地工具与流程树（作者机器上保留）
+/tools/
+/.wwxiaoqi/
+/re/
+/review/
+
+# IDE
+.idea/
+*.iml
+.gradle/
+local.properties
+
+# 系统
+.DS_Store
