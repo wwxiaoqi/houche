@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- 背景层：满铺 -->
+  <rect x="0" y="0" width="108" height="108" fill="#17171A"/>
+  <!-- 前景层：只用白色，落在 18..90 内 -->
+  <rect x="34" y="26" width="40" height="32" rx="9" fill="#FFFFFF"/>
+  <rect x="48" y="56" width="12" height="28" rx="6" fill="#FFFFFF"/>
+</svg>

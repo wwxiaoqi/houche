@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- 背景层：满铺 -->
+  <rect x="0" y="0" width="108" height="108" fill="#17171A"/>
+  <!-- 前景层：只用白色，落在 18..90 内 -->
+  <path d="M 47 27 A 13.5 13.5 0 0 1 47 54 A 13.5 13.5 0 0 1 47 81" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+</svg>

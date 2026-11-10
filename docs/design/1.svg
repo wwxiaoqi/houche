@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- 背景层：满铺 -->
+  <rect x="0" y="0" width="108" height="108" fill="#3B82F6"/>
+  <!-- 前景层：只用白色，落在 18..90 内 -->
+  <path d="M 54 77 A 23 23 0 1 1 77 54" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="77" cy="54" r="8" fill="#FFFFFF"/>
+</svg>
